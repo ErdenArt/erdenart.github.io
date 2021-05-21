@@ -1,0 +1,102 @@
+<!doctype html>
+
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+
+    <title>The HTML5 Herald</title>
+    <meta name="description" content="The HTML5 Herald">
+    <meta name="author" content="SitePoint">
+
+    <link rel="stylesheet">
+
+    <style>
+        body{
+            background-color: darkslategrey;
+            background-size: cover;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .center h1{
+          user-select: none;
+          font-size: 100px;
+          color: white;
+          background: repeating-linear-gradient(-45deg, red 0%, yellow 7.14%, rgb(0,255,0) 14.28%, rgb(0,255,255) 21.4%, cyan 28.56%, blue 35.7%, magenta 42.84%, red 50%);
+            background-size: 600vw 600vw;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            animation: slide 10s linear infinite forwards;
+        }
+        @keyframes slide {
+            0%{
+                background-position-x: 0%;
+            }
+            100%{
+                background-position-x: 600vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+            <img id="dasmem" style="width: 70vh; max-height: 70vh">	
+   
+    <div class="image-upload">
+        <p>
+           <label id="filein" for="file-input" style="cursor: pointer">
+            <img src="https://icon-library.net/images/upload-photo-icon/upload-photo-icon-21.jpg"/>
+        </label>
+        <input type="image" src="https://www.pngfind.com/pngs/m/264-2647902_classic-upload-arrow-button-upload-file-small-icon.png" id="upload" style="width: 23vh" onclick="upload(event)"></p>
+        <input id="file-input" accept="image/*" type="file" hidden onchange="loadFile(event)"/>
+        <div class="kliki"></div>
+    </div>
+    </center>
+    <video hidden src="Funny.mp4" id="inproggres"></video>
+    <video hidden src="NOT%20FUNNY.%20DIDN'T%20LAUGH..mp4" id="not"></video>
+    <video hidden src="videoplayback.mp4" id="notnt"></video>
+    
+    <audio id="mail" src="You%20Got%20Mail%20-%20Sound%20Effect%20for%20Editing.mp3"></audio>
+    
+    <script>
+        var losowe = 0;
+        
+        var loadFile = function(event) {
+            var image = document.getElementById('dasmem');
+            image.src = URL.createObjectURL(event.target.files[0]);
+            image.id = "tentegomem";
+        };
+        var upload = function(event){
+            if (document.getElementById("tentegomem").src != null)
+            document.getElementById("inproggres").play();
+            document.getElementById("inproggres").requestFullscreen();
+            document.getElementById("inproggres").removeAttribute("hidden");
+            document.getElementById("upload").setAttribute("hidden", "");
+            document.getElementById("filein").setAttribute("hidden", "");
+            losowe = Math.random(0,1)
+        };
+            document.getElementById("inproggres").onended = function(event) {
+            document.getElementById("inproggres").exitFullScreen;
+            document.getElementById("inproggres").setAttribute("hidden", "");
+            document.getElementById("mail").play();
+            document.getElementById("tentegomem").src = "https://cdn.pixabay.com/photo/2013/07/12/13/55/letter-147563_640.png";
+            if (losowe > 0.5){
+                document.getElementById("tentegomem").onclick = function(){
+                    document.getElementById("not").play();
+                    document.getElementById("not").requestFullscreen();
+                    document.getElementById("not").removeAttribute("hidden");
+            }
+            }
+            else{
+                document.getElementById("tentegomem").onclick = function(){
+                    document.getElementById("notnt").play();
+                    document.getElementById("notnt").requestFullscreen();
+                    document.getElementById("notnt").removeAttribute("hidden");
+            }
+            }
+        };
+</script>
+</body>
+</html>
