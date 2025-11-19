@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Background</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="sidebar-inner">
+            <ul class="sidebar-links">
+                <li>
+                    <a>
+                        <span class="sidebar-icon" aria-hidden="true">#</span>
+                        <span class="sidebar-label">Menu</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="sidebar-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img" focusable="false">
+                                <path d="M3 11v10h6v-6h6v6h6V11L12 3z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span class="sidebar-label">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="sidebar-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img" focusable="false">
+                                <path d="M3 6h6l2 2h10v10H3z" fill="currentColor"/>
+                            </svg>
+                        </span>
+                        <span class="sidebar-label">Projects</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="sidebar-icon" aria-hidden="true">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32" xml:space="preserve"><style></style><path d="M11.857 25.571a1 1 0 0 1-1-1V7.43a1 1 0 0 1 .78-.975l15.142-3.43A1.002 1.002 0 0 1 28 4v17.143a1 1 0 1 1-2 0V5.252L12.857 8.228V24.57a1 1 0 0 1-1 1z"/><path d="M8.429 29C5.986 29 4 27.013 4 24.571s1.986-4.428 4.429-4.428 4.428 1.986 4.428 4.428S10.871 29 8.43 29zm0-6.857A2.431 2.431 0 0 0 6 24.571C6 25.911 7.09 27 8.429 27s2.428-1.09 2.428-2.429a2.431 2.431 0 0 0-2.428-2.428zM23.571 25.571c-2.442 0-4.428-1.986-4.428-4.428s1.986-4.429 4.428-4.429S28 18.701 28 21.144s-1.986 4.427-4.429 4.427zm0-6.857a2.432 2.432 0 0 0-2.428 2.43c0 1.338 1.09 2.427 2.428 2.427S26 22.481 26 21.143c0-1.34-1.09-2.429-2.429-2.429zM11.856 13.28a1 1 0 0 1-.22-1.974L26.78 7.877a1 1 0 1 1 .442 1.95l-15.143 3.429a.986.986 0 0 1-.222.025z"/></svg>
+                        </span>
+                        <span class="sidebar-label">Music</span>
+                    </a>
+                </li>
+                <li style="position: fixed; bottom: 0; margin-bottom: 10px;" onclick="clickedSettings();">
+                    <a>
+                        <span class="sidebar-icon" aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 11a5 5 0 1 0 5 5 5 5 0 0 0-5-5zm0 8a3 3 0 1 1 3-3 3 3 0 0 1-3 3z"/><path d="M29 13h-2.42a10.8 10.8 0 0 0-1-2.36l1.71-1.71a1 1 0 0 0 0-1.42l-2.8-2.82a1 1 0 0 0-1.42 0L21.36 6.4a10.8 10.8 0 0 0-2.36-1V3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v2.42a10.8 10.8 0 0 0-2.36 1L8.93 4.69a1 1 0 0 0-1.42 0L4.69 7.51a1 1 0 0 0 0 1.42l1.71 1.71a10.8 10.8 0 0 0-1 2.36H3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h2.42a10.8 10.8 0 0 0 1 2.36l-1.73 1.71a1 1 0 0 0 0 1.42l2.82 2.82a1 1 0 0 0 1.42 0l1.71-1.71a10.8 10.8 0 0 0 2.36 1V29a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-2.42a10.8 10.8 0 0 0 2.36-1l1.71 1.71a1 1 0 0 0 1.42 0l2.82-2.82a1 1 0 0 0 0-1.42l-1.71-1.69a10.8 10.8 0 0 0 1-2.36H29a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1zm-1 4h-2.2a1 1 0 0 0-1 .8 9 9 0 0 1-1.29 3.2 1 1 0 0 0 .12 1.26l1.56 1.56-1.41 1.41-1.56-1.56a1 1 0 0 0-1.22-.16 9 9 0 0 1-3.16 1.31 1 1 0 0 0-.8 1V28H15v-2.2a1 1 0 0 0-.8-1 9 9 0 0 1-3.2-1.29 1 1 0 0 0-1.26.12l-1.52 1.56-1.41-1.41 1.56-1.56A1 1 0 0 0 8.49 21a9 9 0 0 1-1.31-3.2 1 1 0 0 0-1-.8H4v-2h2.2a1 1 0 0 0 1-.8A9 9 0 0 1 8.49 11a1 1 0 0 0-.12-1.26L6.81 8.22l1.41-1.41 1.56 1.56a1 1 0 0 0 1.22.12 9 9 0 0 1 3.2-1.31 1 1 0 0 0 .8-1V4h2v2.2a1 1 0 0 0 .8 1A9 9 0 0 1 21 8.49a1 1 0 0 0 1.26-.12l1.56-1.56 1.41 1.41-1.6 1.56a1 1 0 0 0-.12 1.22 9 9 0 0 1 1.31 3.16 1 1 0 0 0 1 .8H28z"/></svg>
+                        </span>
+                        <span class="sidebar-label settings-label">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="settings-inner">
+            <div class="settings-box">
+                <h1>Settings</h1>
+                <p>Triangle count: <input type="number" value="60" max="60" min="0" style="width: 50px;" onchange="changeTriangleCount(this.value)"></p>
+            </div>
+        </div>
+    </nav>
+
+    <div class="background">
+        <div class="triangles-container" id="trianglesContainer"></div>
+    </div>
+
+    <div class="fps-meter" id="fpsMeter">
+        <span class="fps-label">FPS:</span>
+        <span class="fps-value" id="fpsValue">--</span>
+    </div>
+
+    <main class="main-content">
+        <div class="content-box header-box">
+            <h1>Header</h1>
+        </div>
+        <div class="content-box">
+            <h2>Additional Content</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis praesentium, quae quia, dolorem ex id, adipisci ab voluptatum distinctio laudantium eum rerum! Laboriosam minus vero exercitationem, eaque velit officia cumque, consequuntur voluptatibus ab, numquam beatae? Eos, veniam. Aperiam voluptates quas totam, placeat dolor voluptas fuga asperiores consequuntur explicabo cumque ea voluptatem blanditiis reprehenderit id, saepe assumenda, autem laborum. Ea in perspiciatis suscipit dignissimos, odio alias iure hic ratione nulla saepe ullam deserunt nobis similique. Quam tenetur, debitis pariatur cumque necessitatibus minus distinctio architecto quaerat esse cum reiciendis unde voluptatum adipisci veniam, harum expedita eum, repellendus culpa cupiditate at perspiciatis deleniti odio quod! Quod omnis magni neque vel! Officia dolore fuga voluptatibus cumque sit omnis voluptate earum magni? Laboriosam pariatur dolorum in maxime natus facere sequi, molestias voluptatibus nisi repellendus, doloremque, at perferendis officiis ipsa vitae. Commodi perferendis illum, sunt nam quaerat eligendi nihil ipsa! Repellendus iusto ex totam mollitia explicabo id impedit. Sunt atque assumenda id placeat dicta voluptatem? Obcaecati doloremque repellat, quam pariatur minus iure maxime, veritatis, ab nesciunt modi ratione molestiae quod perspiciatis. Aspernatur, doloribus, perspiciatis repellendus deleniti dolore doloremque veniam sapiente provident laudantium obcaecati placeat ipsum. Quia quas voluptate natus necessitatibus deleniti saepe pariatur veniam quibusdam debitis.</p>
+        </div>
+        <div class="projects-content">
+            <div class="content-box">
+                <h2>EngineArt</h2>
+                <p><img src="Monogame.svg" width="100" style="float:left; margin-right: 30px"></img> A lightweight 2D engine built on top of the MonoGame Framework, designed to make 2D games faster and easier.
+                    It provides all the essentials like tilemaps, colliders, and camera handling.</p>
+            </div>
+            <div class="content-box">
+                <h2>EngineArt</h2>
+                <p><img src="minecraftLogo.png" width="100" style="float:left; margin-right: 30px"></img> Old Notch game but now I try to make it</p>
+            </div>
+            <div class="content-box">
+                <h2>EngineArt</h2>
+                <p><img src="Monogame.svg" width="100" style="float:left; margin-right: 30px"></img> A lightweight 2D engine built on top of the MonoGame Framework, designed to make 2D games faster and easier.
+                    It provides all the essentials like tilemaps, colliders, and camera handling.</p>
+            </div>
+            <div class="content-box">
+                <h2>EngineArt</h2>
+                <p><img src="Monogame.svg" width="100" style="float:left; margin-right: 30px"></img> A lightweight 2D engine built on top of the MonoGame Framework, designed to make 2D games faster and easier.
+                    It provides all the essentials like tilemaps, colliders, and camera handling.</p>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
