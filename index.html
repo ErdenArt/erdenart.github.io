@@ -8,6 +8,16 @@
 </head>
 <body>
     <nav class="sidebar">
+        <span class="sidebar-toggle" onclick="toggleSidebar()" aria-label="Toggle Sidebar">
+            <svg viewBox="0 0 100 80" width="30" height="30">
+                <rect width="100" height="15" rx="8"></rect>
+                <rect y="30" width="100" height="15" rx="8"></rect>
+                <rect y="60" width="100" height="15" rx="8"></rect>
+            </svg>
+        </span>
+        <!-- <svg class="sidebar-background" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon points="0,0 200,0 100,100 0,100" />
+        </svg> -->
         <div class="sidebar-inner">
             <ul class="sidebar-links">
                 <li>
@@ -16,7 +26,7 @@
                         <span class="sidebar-label">Menu</span>
                     </a>
                 </li>
-                <li>
+                <li onclick="clickedSubpage('home')">
                     <a href="#">
                         <span class="sidebar-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" role="img" focusable="false">
@@ -26,8 +36,8 @@
                         <span class="sidebar-label">Home</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li onclick="clickedSubpage('projects')">
+                    <a href="#projects">
                         <span class="sidebar-icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" role="img" focusable="false">
                                 <path d="M3 6h6l2 2h10v10H3z" fill="currentColor"/>
@@ -36,12 +46,20 @@
                         <span class="sidebar-label">Projects</span>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
+                <li onclick="clickedSubpage('music')">
+                    <a href="#music">
                         <span class="sidebar-icon" aria-hidden="true">
-                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32" xml:space="preserve"><style></style><path d="M11.857 25.571a1 1 0 0 1-1-1V7.43a1 1 0 0 1 .78-.975l15.142-3.43A1.002 1.002 0 0 1 28 4v17.143a1 1 0 1 1-2 0V5.252L12.857 8.228V24.57a1 1 0 0 1-1 1z"/><path d="M8.429 29C5.986 29 4 27.013 4 24.571s1.986-4.428 4.429-4.428 4.428 1.986 4.428 4.428S10.871 29 8.43 29zm0-6.857A2.431 2.431 0 0 0 6 24.571C6 25.911 7.09 27 8.429 27s2.428-1.09 2.428-2.429a2.431 2.431 0 0 0-2.428-2.428zM23.571 25.571c-2.442 0-4.428-1.986-4.428-4.428s1.986-4.429 4.428-4.429S28 18.701 28 21.144s-1.986 4.427-4.429 4.427zm0-6.857a2.432 2.432 0 0 0-2.428 2.43c0 1.338 1.09 2.427 2.428 2.427S26 22.481 26 21.143c0-1.34-1.09-2.429-2.429-2.429zM11.856 13.28a1 1 0 0 1-.22-1.974L26.78 7.877a1 1 0 1 1 .442 1.95l-15.143 3.429a.986.986 0 0 1-.222.025z"/></svg>
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32" xml:space="preserve"><path d="M11.857 25.571a1 1 0 0 1-1-1V7.43a1 1 0 0 1 .78-.975l15.142-3.43A1.002 1.002 0 0 1 28 4v17.143a1 1 0 1 1-2 0V5.252L12.857 8.228V24.57a1 1 0 0 1-1 1z"/><path d="M8.429 29C5.986 29 4 27.013 4 24.571s1.986-4.428 4.429-4.428 4.428 1.986 4.428 4.428S10.871 29 8.43 29zm0-6.857A2.431 2.431 0 0 0 6 24.571C6 25.911 7.09 27 8.429 27s2.428-1.09 2.428-2.429a2.431 2.431 0 0 0-2.428-2.428zM23.571 25.571c-2.442 0-4.428-1.986-4.428-4.428s1.986-4.429 4.428-4.429S28 18.701 28 21.144s-1.986 4.427-4.429 4.427zm0-6.857a2.432 2.432 0 0 0-2.428 2.43c0 1.338 1.09 2.427 2.428 2.427S26 22.481 26 21.143c0-1.34-1.09-2.429-2.429-2.429zM11.856 13.28a1 1 0 0 1-.22-1.974L26.78 7.877a1 1 0 1 1 .442 1.95l-15.143 3.429a.986.986 0 0 1-.222.025z"/></svg>
                         </span>
                         <span class="sidebar-label">Music</span>
+                    </a>
+                </li>
+                <li onclick="clickedSubpage('algorithms')">
+                    <a href="#algorithms">
+                        <span class="sidebar-icon" aria-hidden="true">
+                            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 32 32" xml:space="preserve"><path d="M12 21L10 20M12 21L14 20M12 21V18.5M6 18L4 17V14.5M4 9.5V7M4 7L6 6M4 7L6 8M10 4L12 3L14 4M18 6L20 7M20 7L18 8M20 7V9.5M12 11L10 10M12 11L14 10M12 11V13.5M18 18L20 17V14.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                        <span class="sidebar-label">Algorithms</span>
                     </a>
                 </li>
                 <li style="position: fixed; bottom: 0; margin-bottom: 10px;" onclick="clickedSettings();">
@@ -82,7 +100,7 @@
         <div class="projects-content">
             <div class="content-box">
                 <h2>EngineArt</h2>
-                <p><img src="Monogame.svg" width="100" style="float:left; margin-right: 30px"></img> A lightweight 2D engine built on top of the MonoGame Framework, designed to make 2D games faster and easier.
+                <p><img src="SVG/Monogame.svg" width="100" style="float:left; margin-right: 30px"></img> A lightweight 2D engine built on top of the MonoGame Framework, designed to make 2D games faster and easier.
                     It provides all the essentials like tilemaps, colliders, and camera handling.</p>
             </div>
             <div class="content-box">
@@ -91,14 +109,15 @@
             </div>
             <div class="content-box">
                 <h2>EngineArt</h2>
-                <p><img src="Monogame.svg" width="100" style="float:left; margin-right: 30px"></img> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam similique ipsa optio voluptate sint dignissimos obcaecati soluta nihil vel ab architecto in quidem tempore, vitae, enim reprehenderit quia, facere maxime itaque aspernatur minus dolores culpa. Illum ipsa perferendis magnam incidunt. </p>
+                <p><img src="SVG/Monogame.svg" width="100" style="float:left; margin-right: 30px"></img> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam similique ipsa optio voluptate sint dignissimos obcaecati soluta nihil vel ab architecto in quidem tempore, vitae, enim reprehenderit quia, facere maxime itaque aspernatur minus dolores culpa. Illum ipsa perferendis magnam incidunt. </p>
             </div>
             <div class="content-box">
                 <h2>EngineArt</h2>
-                <p><img src="Monogame.svg" width="100" style="float:left; margin-right: 30px"></img> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt nostrum eum iste minus architecto doloremque laborum quo recusandae dolores libero.</p>
+                <p><img src="SVG/Monogame.svg" width="100" style="float:left; margin-right: 30px"></img> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt nostrum eum iste minus architecto doloremque laborum quo recusandae dolores libero.</p>
             </div>
         </div>
     </main>
     <script src="script.js"></script>
+    <script src="subPages.js"></script>
 </body>
 </html>

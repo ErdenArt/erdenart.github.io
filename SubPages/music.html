@@ -1,0 +1,32 @@
+<div class="content-box">
+    <div style="display: grid; grid-auto-flow: column;">
+        <h1 style="margin-right: auto;">Music</h1>
+        <div style="margin-right: 20px; background-color: darkblue;">
+            <input type="button" value="V" style="background-color: darkblue; color: white; border: none; cursor: pointer; padding: 5px;" onclick="openFilterDropdown()">
+            Filters:
+            <div class="dropdown" style="visibility: hidden; position: absolute;">
+                <div class="dropdown-content" id="music-genre-filters">
+                    <input type="checkbox" id="genre-rock" name="genre-rock" value="rock">
+                    <label for="genre-rock"> Rock</label><br>
+                    <input type="checkbox" id="genre-pop" name="genre-pop" value="pop">
+                    <label for="genre-pop"> Pop</label><br>
+                    <input type="checkbox" id="genre-jazz" name="genre-jazz" value="jazz">
+                    <label for="genre-jazz"> Jazz</label><br>
+                    <input type="checkbox" id="genre-classical" name="genre-classical" value="classical">
+                    <label for="genre-classical"> Classical</label><br>
+                    <input type="checkbox" id="genre-electronic" name="genre-electronic" value="electronic">
+                    <label for="genre-electronic"> Electronic</label><br>
+                </div>
+            </div>
+        </div>
+        <div>
+            Sorting:
+            <select id="music-sort" onchange="sortMusic()">
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="a-z">A-Z</option>
+                <option value="z-a">Z-A</option>
+            </select>
+        </div>
+    </div>
+</div>

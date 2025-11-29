@@ -37,7 +37,7 @@ body {
     border-right: 1px solid rgba(255, 255, 255, 0.281);
     transition: width 0.3s ease;
     z-index: 5;
-    overflow: hidden;
+     /* overflow: hidden; */
 }
 
 .sidebar:hover {
@@ -311,4 +311,42 @@ body {
     grid-template-columns: 33% 33% 33%;
     grid-template-rows: auto;
     justify-content: center;
+}
+
+.content-box ul{
+    margin-left: 40px;
+    margin-top: 10px;
+    line-height: 30px;
+}
+.content-box p{
+    margin: 20px;
+}
+.codeBlock{
+    background-color: #1e1e1e;
+    padding: 20px;
+    padding-left: 50px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+
+
+
+
+orange{
+    color: orange;
+}
+lblue{
+    color: #569CD6;
+}
+dred{
+    color: #D16969;
+}
+bblue{
+    color: #9CDCFE;
+}
+green{
+    color: #6A9955;
 }
