@@ -132,6 +132,11 @@ body {
 .sidebar.settings-open .settings-label {
     transform: translateX(0);
 }
+.sidebar-background{
+    margin-left: 60px;
+    top: 0;
+    position: inherit;
+}
 
 
 .triangles-container {

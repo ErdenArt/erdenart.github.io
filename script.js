@@ -53,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     updateFPS();
+
+    // function update(){
+    //     console.log(document.querySelector(".sidebar").style.width)
+    //     requestAnimationFrame(update);
+    // }
+    // update()
 });
 
 let isSettingsOn = false;
