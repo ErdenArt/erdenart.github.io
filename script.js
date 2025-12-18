@@ -82,3 +82,6 @@ function changeTriangleCount(num){
     }
 }
 
+function changeVolume(object){
+    audio.volume = object.value
+}

@@ -1,0 +1,53 @@
+.tape-container{
+    position: fixed;
+    left: -50%;
+    width: 100%;
+    top: 50%;
+    
+}
+.tape{
+    width: 200%;
+    position:inherit;
+    background-color: yellow;
+    color:black;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bolder;
+    text-shadow: 0px 0px 4px black;
+    border: 5px solid #c5ab15;
+    box-shadow: 4px 4px 4px black;
+    animation: scrollTapeColor 5s infinite;
+}
+.tape-line{
+    border-top: 3px dashed black;
+    border-style: dashed;
+    margin-top: -10px;
+    position: absolute;
+    width: 200%;
+    left: 0;
+    animation: scrollTape 60s linear infinite;
+}
+.tape-line.line2{
+    margin-top: 32px;
+}
+@keyframes scrollTape {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+@keyframes scrollTapeColor{
+    0% {
+        border-color: #c5ab15;
+    }
+    50% {
+        border-color: #72651d;
+    }
+    100% {
+        border-color: #c5ab15;
+    }
+}

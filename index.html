@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New website</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="SubPages/missingContent.css">
 </head>
 <body>
     <audio controls class="audioElement">
@@ -70,6 +71,14 @@
                             <span class="sidebar-label settings-label">Settings</span>
                         </a>
                     </li>
+                    <li onclick="clickedSubpage('games')">
+                        <a href="#games">
+                            <span class="sidebar-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#ffffff" fill-rule="evenodd" d="M1.203 5.169L.784 8.94a2.305 2.305 0 0 0 4.353 1.286L5.5 9.5h3l.363.726a2.305 2.305 0 0 0 4.353-1.286l-.42-3.771A3 3 0 0 0 9.816 2.5h-5.63a3 3 0 0 0-2.982 2.669Zm3.172-.794c.345 0 .625.28.625.625v.542h.542a.625.625 0 1 1 0 1.25H5v.541a.625.625 0 1 1-1.25 0v-.541h-.542a.625.625 0 1 1 0-1.25h.542V5c0-.345.28-.625.625-.625m4.89 3.042a.625.625 0 1 0 0-1.25a.625.625 0 0 0 0 1.25m1.876-2.175a.625.625 0 1 1-1.25 0a.625.625 0 0 1 1.25 0" clip-rule="evenodd"/></svg>
+                            </span>
+                            <span class="sidebar-label">Games</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="settings-inner">
@@ -77,15 +86,15 @@
                     <h1>Settings</h1>
                     <p>Triangle count: <input type="number" value="60" max="60" min="0" style="width: 50px;" onchange="changeTriangleCount(this.value)"></p>
                     <p>Music volume: <br><input type="range" min="0" max="1" step="0.01" onchange="changeVolume(this)" ondrag="changeVolume(this)"></p>
-                    <p>Dupaaaaaaaaaaaaaaaaaaa</p>
+           
                 </div>
             </div>
         </nav>
-        <span class="sidebar-background">
+        <!-- <span class="sidebar-background" style="position: relative;">
             <svg class="svgVisualiser" viewBox="0 0 100 1000" width="50px" height="100%">
                 <polygon class="polygonVisualiser" points="" stroke="currentColor" stroke-width="3px"></polygon>
             </svg>
-        </span>
+        </span> -->
     </div>
 
     <div class="background">
@@ -108,8 +117,8 @@
     <script>
         const audio = document.querySelector(".audioElement")
         const polygon = document.querySelector(".polygonVisualiser")
-        audio.load()
-        audio.play()
+        // audio.load()
+        // audio.play()
 
         console.log(audio.volume)
 

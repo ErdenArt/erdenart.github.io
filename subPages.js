@@ -21,6 +21,9 @@ function openFilterDropdown(){
                 case 'algorithms':
                     load("SubPages/algorithms.html", document.querySelector(".main-content"));
                     break;
+                case 'games':
+                    load("SubPages/games.html", document.querySelector(".main-content"));
+                    break;
             }
         }
 
@@ -45,6 +48,9 @@ function openFilterDropdown(){
                     break;
                 case 'music':
                     load("SubPages/music.html", document.querySelector(".main-content"));
+                    break;
+                case 'games':
+                    load("SubPages/games.html", document.querySelector(".main-content"));
                     break;
                 case 'home':
                 default:
