@@ -1,0 +1,57 @@
+<div class="content-box header-box">
+    <h1>Projects</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, dolore?</p>
+    <ul>
+
+    </ul>
+</div>
+<div class="content-box content2">
+    <h2>Chess Movement Algorithm</h2>
+    <p>The chess movement algorithm is designed to determine the valid moves for each piece on the chessboard based on the rules of chess (or even your own). Each piece has its own unique movement pattern, and the algorithm takes into account the current position of the pieces, the state of the board, and any special rules such as castling, en passant, and pawn promotion.</p>
+    <p>To implement this algorithm, we first need to define a base class for chess pieces and then create subclasses for each specific piece type (Pawn, Rook, Knight, Bishop, Queen, King). For example in my game "Sword of magic", that I am developing in GameMaker, I have created a struct that every piece inherits from:</p>
+        
+    <ol class="codeBlock" style="width: 500px; float: left; margin-right: 20px;">
+        <li><orange>"Player"</orange>:</li>
+        <li>{</li>
+        <li>&nbsp <lblue>canControl</lblue>: <dred>true</dred>,</li>
+        <li>&nbsp <lblue>sprite</lblue>: <dred>spr_player</dred>,</li>
+        <li>&nbsp <lblue>health</lblue>: <dred>20</dred>,</li>
+        <li>&nbsp <lblue>movement</lblue>:                          [<bblue>0,0,1,0,0</bblue></li>
+        <li>&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <bblue>0,1,1,1,0,</bblue></li>
+        <li>&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <bblue>1,1,0,1,1,</bblue></li>
+        <li>&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <bblue>0,1,1,1,0,</bblue></li>
+        <li>&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp &nbsp <bblue>0,0,1,0,0</bblue>]</li>
+        <li>&nbsp ...</li>
+        <li>},</li>
+    </ol>
+    
+    <p style="margin-top: 20px;">In this example, the "movement" array defines the movement pattern for the piece. The values in the array represent the possible moves relative to the piece's current position. A value of 1 indicates a valid move, while a value of 0 indicates an invalid move. The center of the array (the position of the piece itself) is represented by the middle element.</p>
+    <p>When calculating valid moves, the algorithm iterates through the "movement" array, checking each position relative to the piece's current location on the board.</p>
+    <br>
+
+    <ol class="codeBlock" style="width: 500px; float: left; margin-right: 20px;">
+        <li><green>// --------MOVING----------</green></li>
+        <li><lblue>var</lblue> <bblue>movePallete</bblue> = <dred>global</dred>.<bblue>pawns</bblue>[<orange>i</orange>]</li>
+        <li><lblue>var</lblue> <bblue>palleteSize</bblue> = <orange>sqrt(array_length(</orange><bblue>movePallete</bblue><orange>))</orange></li>
+        <li><green><!-- empty line --></green></li>
+        <li><green>// if is inside of speed range and you have moves left</green></li>
+
+        <li style="text-indent: -3em;padding-left: 3em;">
+            <lblue>var</lblue> <bblue>tilePick</bblue> = <bblue>cursor</bblue>.<bblue>pos</bblue>;
+        </li>
+        <li><green>//checking</green></li>
+        <li ><lblue>if</lblue> (<bblue>selectedPawn</bblue> != <dred>null</dred> &&<br>
+        &nbsp &nbsp <bblue>tilePick</bblue> >= <orange>0</orange> && <br>
+        &nbsp &nbsp <bblue>tilePick</bblue> &lt; <bblue>palleteSize</bblue> * <bblue>palleteSize</bblue> && <br>
+        &nbsp &nbsp <bblue>movePallete</bblue>[<bblue>tilePick</bblue>] == <orange>1</orange> ) </li>
+        <li>{</li>
+        <li>&nbsp &nbsp <bblue>selectedPawn</bblue>.<bblue>pos</bblue> = [ <bblue>tileX</bblue>, <bblue>tileY</bblue> ]</li>
+        <li>&nbsp &nbsp <bblue>walkPawn</bblue> = <bblue>selectedPawn</bblue>;</li>
+        <li>&nbsp &nbsp <bblue>selectedPawn</bblue>.<bblue>moveCount</bblue> -= <orange>1</orange>;</li>
+        <li>}</li>
+        <li><lblue>else</lblue> {</li>
+        <li>&nbsp &nbsp <bblue>selectedPawn</bblue> = <orange>pointer_null</orange>;</li>
+        <li>}</li>
+    </ol>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, sunt rerum tempore eum ab culpa fugit? Fuga magnam sapiente, molestias harum laboriosam cupiditate sed, suscipit atque hic deleniti, reiciendis labore? Quas enim ipsum dolorum labore nemo tempora, quae impedit explicabo soluta pariatur laborum fugit ab atque delectus corrupti ut aperiam.</p>
+</div>

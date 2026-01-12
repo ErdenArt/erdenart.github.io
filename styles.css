@@ -228,7 +228,7 @@ body {
     z-index: 3;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 80px 20px 40px;
+    padding: 0px 20px 40px;
     padding-left: calc(60px + 20px);
     display: flex;
     flex-direction: column;
@@ -337,8 +337,16 @@ body {
     margin-top: 10px;
 }
 
-
-
+.noDecorations{
+    color: white;
+    text-decoration: none;
+}
+.highlighAble{
+    transition: transform 0.1s linear;
+}
+.highlighAble:hover{
+    transform: scale(1.02);
+}
 
 orange{
     color: orange;

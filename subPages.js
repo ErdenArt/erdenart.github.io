@@ -23,6 +23,8 @@ function openFilterDropdown(){
                     break;
                 case 'games':
                     load("SubPages/games.html", document.querySelector(".main-content"));
+                case 'links':
+                    load("SubPages/links.html", document.querySelector(".main-content"));
                     break;
             }
         }
@@ -52,9 +54,14 @@ function openFilterDropdown(){
                 case 'games':
                     load("SubPages/games.html", document.querySelector(".main-content"));
                     break;
+                case 'links':
+                    load("SubPages/links.html", document.querySelector(".main-content"));
+                    break;
                 case 'home':
-                default:
                     load("SubPages/home.html", document.querySelector(".main-content"));
+                    break;  
+                default:
+                    load("SubPages/error404.html", document.querySelector(".main-content"));
                     break;
             }
         }
