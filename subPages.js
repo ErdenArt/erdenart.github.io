@@ -57,6 +57,7 @@ function openFilterDropdown(){
                 case 'links':
                     load("SubPages/links.html", document.querySelector(".main-content"));
                     break;
+                case '':
                 case 'home':
                     load("SubPages/home.html", document.querySelector(".main-content"));
                     break;  
