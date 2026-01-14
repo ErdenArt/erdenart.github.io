@@ -348,6 +348,11 @@ body {
     transform: scale(1.02);
 }
 
+@font-face {
+  font-family: "RightAnd";
+  src: url("Fonts/RIGHTAND.ttf") format("truetype");
+}
+
 orange{
     color: orange;
 }
