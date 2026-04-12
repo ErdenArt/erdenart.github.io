@@ -389,6 +389,140 @@ body {
     line-height: 25px;
 }
 
+.links-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    align-items: stretch;
+}
+
+.links-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: center;
+    padding: 18px 20px;
+    border: 1px solid rgba(0, 255, 180, 0.22);
+    border-radius: 16px;
+    background: radial-gradient(circle at top left, rgba(56, 255, 198, 0.14), transparent 30%),
+                linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.18));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08),
+                inset 0 0 20px rgba(0,255,180,0.08),
+                0 16px 28px rgba(0,0,0,0.22);
+    color: #e8fff4;
+    text-decoration: none;
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.links-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 100% 4px;
+    opacity: 0.35;
+}
+
+.links-card:hover {
+    transform: translateY(-2px);
+}
+
+.links-card img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.links-card-content strong {
+    display: block;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.links-card.github {
+    border-color: rgba(255,255,255,0.18);
+    background: linear-gradient(180deg, rgba(14,14,14,0.98), rgba(4,4,4,0.96));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.05), inset 0 0 20px rgba(255,255,255,0.04), 0 16px 28px rgba(0,0,0,0.24);
+}
+
+.links-card.github::before {
+    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+    opacity: 0.28;
+}
+
+.links-card.github:hover {
+    border-color: rgba(255,255,255,0.28);
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), inset 0 0 24px rgba(255,255,255,0.08), 0 20px 36px rgba(0,0,0,0.30);
+}
+
+.links-card.youtube {
+    border-color: rgba(255, 80, 80, 0.35);
+    background: linear-gradient(180deg, rgba(40, 0, 0, 0.92), rgba(10, 0, 0, 0.98));
+    box-shadow: inset 0 0 0 1px rgba(255,80,80,0.14), inset 0 0 18px rgba(255,80,80,0.06), 0 16px 28px rgba(0,0,0,0.22);
+}
+
+.links-card.youtube:hover {
+    border-color: rgba(255, 80, 80, 0.55);
+    box-shadow: inset 0 0 0 1px rgba(255,80,80,0.18), inset 0 0 24px rgba(255,80,80,0.08), 0 20px 36px rgba(0,0,0,0.30);
+}
+
+.links-card.twitter {
+    border-color: rgba(0, 240, 255, 0.35);
+    background: linear-gradient(180deg, rgba(0, 20, 30, 0.92), rgba(0, 8, 18, 0.98));
+    box-shadow: inset 0 0 0 1px rgba(0,240,255,0.14), inset 0 0 18px rgba(0,240,255,0.06), 0 16px 28px rgba(0,0,0,0.22);
+}
+
+.links-card.twitter:hover {
+    border-color: rgba(0, 240, 255, 0.55);
+    box-shadow: inset 0 0 0 1px rgba(0,240,255,0.18), inset 0 0 24px rgba(0,240,255,0.08), 0 20px 36px rgba(0,0,0,0.30);
+}
+
+.links-card.backloggd {
+    border-color: rgba(180, 180, 180, 0.35);
+    background: linear-gradient(180deg, rgba(10, 10, 10, 0.96), rgba(0, 0, 0, 0.98));
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.06), inset 0 0 18px rgba(180,180,180,0.06), 0 16px 28px rgba(0,0,0,0.22);
+}
+
+.links-card.backloggd:hover {
+    border-color: rgba(200, 200, 200, 0.45);
+    box-shadow: inset 0 0 0 1px rgba(200,200,200,0.12), inset 0 0 24px rgba(200,200,200,0.08), 0 20px 36px rgba(0,0,0,0.30);
+}
+
+.links-card.steam {
+    border-color: rgba(40, 80, 160, 0.35);
+    background: linear-gradient(180deg, rgba(6, 12, 26, 0.94), rgba(4, 8, 18, 0.98));
+    box-shadow: inset 0 0 0 1px rgba(80,140,220,0.10), inset 0 0 18px rgba(40,80,160,0.06), 0 16px 28px rgba(0,0,0,0.22);
+}
+
+.links-card.steam:hover {
+    border-color: rgba(40, 80, 160, 0.55);
+    box-shadow: inset 0 0 0 1px rgba(80,140,220,0.14), inset 0 0 24px rgba(40,80,160,0.08), 0 20px 36px rgba(0,0,0,0.30);
+}
+
+.links-card.github img { filter: drop-shadow(0 0 8px rgba(255,255,255,0.18)); }
+.links-card.youtube img { filter: drop-shadow(0 0 8px rgba(255,80,80,0.24)); }
+.links-card.twitter img { filter: drop-shadow(0 0 8px rgba(0,240,255,0.24)); }
+.links-card.backloggd img { filter: drop-shadow(0 0 8px rgba(180,180,180,0.22)); }
+.links-card.steam img { filter: drop-shadow(0 0 8px rgba(80,140,220,0.22)); }
+
+.links-card-content span {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.82);
+}
+
 @media (max-width: 768px) {
     .codeBlock{
         width: inherit;
