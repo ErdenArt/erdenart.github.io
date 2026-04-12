@@ -8,6 +8,10 @@
     <link rel="stylesheet" type="text/css" href="SubPages/missingContent.css">
 </head>
 <body>
+    <div class="mobile-topbar" onclick="toggleSidebar()" aria-label="Open navigation">
+        <span class="mobile-topbar-label" id="mobileTopbarLabel"># Home</span>
+    </div>
+
     <audio controls class="audioElement">
         <source src="Music/Yeah.mp3">
     </audio>
@@ -21,7 +25,7 @@
             </svg> -->
             <div class="sidebar-inner">
                 <ul class="sidebar-links">
-                    <li>
+                    <li id="menuSideBar">
                         <a>
                             <span class="sidebar-icon" aria-hidden="true">#</span>
                             <span class="sidebar-label">Menu</span>
