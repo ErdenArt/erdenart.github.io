@@ -33,6 +33,76 @@ function openFilterDropdown(){
             sidebar.classList.remove('sidebar-open');
         }
 
+        function initProjectAtlas() {
+            const atlas = document.querySelector('.atlas');
+            if (!atlas) return;
+
+            const mainImage = atlas.querySelector('.atlas-current');
+            const mainVideo = atlas.querySelector('.atlas-video');
+            const prevButton = atlas.querySelector('.atlas-nav.prev');
+            const nextButton = atlas.querySelector('.atlas-nav.next');
+            const previews = Array.from(atlas.querySelectorAll('.atlas-thumb'));
+            if (!mainImage || !mainVideo || !previews.length) return;
+
+            let currentIndex = 0;
+
+            const getEmbedUrl = url => {
+                if (!url) return '';
+                if (url.includes('youtube.com/watch')) {
+                    return url.replace('watch?v=', 'embed/') + '?rel=0&showinfo=0';
+                }
+                if (url.includes('youtu.be/')) {
+                    return url.replace('youtu.be/', 'www.youtube.com/embed/') + '?rel=0&showinfo=0';
+                }
+                return url;
+            };
+
+            const activateThumb = index => {
+                currentIndex = (index + previews.length) % previews.length;
+                const item = previews[currentIndex];
+                const type = item.dataset.type || 'img';
+                const src = item.dataset.src;
+                const title = item.dataset.title || '';
+
+                previews.forEach((thumb, idx) => {
+                    thumb.classList.toggle('active', idx === currentIndex);
+                });
+
+                if (type === 'video') {
+                    mainImage.style.display = 'none';
+                    mainVideo.style.display = 'block';
+                    mainVideo.src = getEmbedUrl(item.dataset.videoUrl || src);
+                    mainVideo.title = title;
+                } else {
+                    mainVideo.style.display = 'none';
+                    mainVideo.src = '';
+                    mainImage.style.display = 'block';
+                    mainImage.src = src;
+                    mainImage.alt = title;
+                }
+
+                const activeThumb = previews[currentIndex];
+                activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            };
+
+            previews.forEach((thumb, index) => {
+                thumb.addEventListener('click', () => activateThumb(index));
+            });
+
+            if (prevButton) {
+                prevButton.addEventListener('click', () => activateThumb(currentIndex - 1));
+            }
+            if (nextButton) {
+                nextButton.addEventListener('click', () => activateThumb(currentIndex + 1));
+            }
+
+            activateThumb(0);
+        }
+
+        function initPageScripts() {
+            initProjectAtlas();
+        }
+
         function clickedSubpage(page){
             switch (page){
                 case "home":
@@ -55,6 +125,7 @@ function openFilterDropdown(){
                     break;
             }
             updateMobileTopbarLabel(page);
+            initPageScripts();
             if (window.innerWidth <= 768) {
                 closeSidebar();
             }
@@ -103,6 +174,7 @@ function openFilterDropdown(){
                     updateMobileTopbarLabel('home');
                     break;
             }
+            initPageScripts();
         }
         window.addEventListener('hashchange', loadContentBasedOnHash);
         loadContentBasedOnHash();
