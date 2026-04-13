@@ -83,7 +83,7 @@ function openFilterDropdown(){
                     }
 
                     const activeThumb = previews[currentIndex];
-                    activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    //activeThumb.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
                 };
 
                 previews.forEach((thumb, index) => {
