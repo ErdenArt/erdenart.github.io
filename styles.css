@@ -744,6 +744,36 @@ body {
     #menuSideBar{
         display: none;
     }
+
+    .atlas-display {
+        display: block;
+        position: relative;
+    }
+
+    .atlas-nav {
+        position: absolute;
+        top: 50%;
+        width: 48px;
+        height: 48px;
+        min-width: 48px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        padding: 0;
+        transform: translateY(-50%);
+        z-index: 2;
+    }
+
+    .atlas-nav.prev {
+        left: 12px;
+    }
+
+    .atlas-nav.next {
+        right: 12px;
+    }
+
+    .atlas-frame {
+        height: auto;
+    }
 }
 
 @font-face {
